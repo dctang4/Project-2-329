@@ -26,7 +26,7 @@ function App() {
 
     //   setHeroesData([...heroesData, ...data.result])
     // }
-  }
+  // }
   // useEffect(() => {getData()}, [])
   // console.log(...heroesData)
 
@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <h1>App component</h1>
     </div>
   );
 }
