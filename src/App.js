@@ -4,18 +4,18 @@ import './App.css';
 
 function App() {
 
-  const [heroesData, setHeroesData] = useState(null)
+  // const [heroesData, setHeroesData] = useState(null)
 
 
 
-  const getData = async () => {
+  // const getData = async () => {
     
-    const url = "https://myheroacademiaapi.com/api/character";
+  //   const url = "https://myheroacademiaapi.com/api/character";
 
-    const response = await fetch(url);
-    const data = await response.json();
+  //   const response = await fetch(url);
+  //   const data = await response.json();
 
-    setHeroesData(data.result)
+  //   setHeroesData(data.result)
     
 
     // for (let i = 2; i <= 16; i++) {
@@ -27,8 +27,8 @@ function App() {
     //   setHeroesData([...heroesData, ...data.result])
     // }
   }
-  useEffect(() => {getData()}, [])
-  console.log(...heroesData)
+  // useEffect(() => {getData()}, [])
+  // console.log(...heroesData)
 
   // const getData2 = async () => {
   //   for (let i = 2; i <= 16; i++) {
