@@ -1,5 +1,7 @@
 # Project Overview
 
+![Alt Text](https://i.pinimg.com/originals/e6/f7/10/e6f7108412d3f772f6473cb0f7aa5474.gif)
+
 ## Project Links
 
 - [add your github repo link](https://github.com/dctang4/Project-2-329.git)
