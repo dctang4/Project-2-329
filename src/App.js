@@ -16,30 +16,14 @@ function App() {
       tempArr.push(...data.result);
       
     }
-    tempArr = tempArr.filter((char) => char.quirk !== null)
-    tempArr = tempArr.filter((char) => char.quirk !== "Unknown Quirk")
-    // tempArr = tempArr.filter((char) => char.fightstyle !== null)
+    // tempArr = tempArr.filter((char) => char.quirk !== null)
+    // tempArr = tempArr.filter((char) => char.quirk !== "Unknown Quirk")
+
     setHeroesData(tempArr);
-
-    // const response1 = await fetch(
-    //   `https://myheroacademiaapi.com/api/character?page=1`);
-    // const data1 = await response1.json();
-
-    // const response2 = await fetch(
-    //   `https://myheroacademiaapi.com/api/character?page=2`);
-    // const data2 = await response2.json();
-
-    // const response3 = await fetch(
-    //   `https://myheroacademiaapi.com/api/character?page=3`);
-    // const data3 = await response3.json();
-
-    // setHeroesData([...data1.result, ...data2.result, ... data3.result])
   };
 
-  console.log(heroesData);
-  useEffect(() => {
-    getData();
-  }, []);
+  // console.log(heroesData);
+  useEffect(() => {getData();}, []);
 
   // if (heroesData.length === 20*page) {
   //   page++;

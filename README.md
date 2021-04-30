@@ -55,7 +55,9 @@ The api I have chosen provides a array of the characters from the manga/anime My
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-- [link to wireframes]()
+- [link to mobile wireframe](https://res.cloudinary.com/dvxvez8mj/image/upload/v1619804975/Project%202/20210430_134123_2_xbpqss.jpg)
+- [link to tablet wireframe](https://res.cloudinary.com/dvxvez8mj/image/upload/v1619804989/Project%202/20210430_134041_2_hhutag.jpg)
+- [link to desktop wireframe](https://res.cloudinary.com/dvxvez8mj/image/upload/v1619805001/Project%202/20210430_134149_2_vgp6gq.jpg)
 - [link to time-priority matrix](https://www.figma.com/proto/TyTFeka4992fpzpYGDPfqF/Project-2-329-Time-Priority-Matrix?node-id=1%3A2&scaling=min-zoom&page-id=0%3A1)
 - [link to react architecture](https://docs.google.com/presentation/d/17NVojexkzh3ptI286mghVwQZl1-8aGWFQIdKW78fHqo/edit?usp=sharing)
 
@@ -93,7 +95,7 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Character | This will be where the character list page |
 | Info | The page with the selected charcter info |
 | FaveHeroes | This will be the page where you can add your favorite heros to |
-| MyHero | generate your own hero alias and quirk. |
+| MyAlias | generate your own hero alias and quirk. |
 | Trivia | A post-mvp page with trvia questions about the characters |
 | Footer | This will render the footer | 
 
@@ -137,10 +139,29 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 ## Code Snippet
 
-<!-- Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
+ <!-- Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code.  -->
 
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
-``` -->
+``` js
+const [heroesData, setHeroesData] = useState(null);
+
+  const getData = async () => {
+    let tempArr = [];
+    for (let i = 1; i < 17; i++) {
+      const response = await fetch(
+        `https://myheroacademiaapi.com/api/character?page=${i}`
+      );
+      const data = await response.json();
+
+      tempArr.push(...data.result);
+      
+    }
+    // tempArr = tempArr.filter((char) => char.quirk !== null)
+    // tempArr = tempArr.filter((char) => char.quirk !== "Unknown Quirk")
+
+    setHeroesData(tempArr);
+  };
+
+  // console.log(heroesData);
+  useEffect(() => {getData();}, []);
+
+``` 
