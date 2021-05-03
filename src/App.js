@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 // import Router from "react-router-dom"
+import Header from "./components/Header"
+import Main from "./components/Main"
+import Footer from "./components/Footer"
 import "./App.scss";
 
 function App() {
@@ -26,7 +29,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>App component</h1>
+      <Header/>
+      <Main/>
+      <Footer heroesData={heroesData}/>
     </div>
   );
 }
