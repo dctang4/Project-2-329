@@ -74,13 +74,23 @@ h1 {
 }
 
 ///////////////////////////////////
-// Main - Heroes
+// Main - Home
 ///////////////////////////////////
 .home {
   height: 100%;
   overflow: auto;
   .villians-heroes {
-    height: 200px;
+    height: 300px;
+    padding-top: 5px;
+  }
+  .description {
+    .description-1 {
+      margin: 10px 0;
+    }
+
+    .description-2 {
+      display: none;
+    }
   }
 
 }
