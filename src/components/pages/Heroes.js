@@ -1,13 +1,21 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
-const Heroes = ({heroesData}) => {
+const Heroes = ({heroesData, handleClick}) => {
   console.log(heroesData)
 
   const loaded = () => {
     const heroes = heroesData.map((heroData,index) => {
       return (
         <div className="hero" key={index}>
-          <p className={heroData.id}>{heroData.name}</p>
+          <Link 
+            to={`/heroes/${heroData.id}`} 
+            onClick={() => handleClick(heroData)}
+          >
+            <p className={heroData.id}>
+              {heroData.name}
+            </p>
+          </Link>
         </div>
       )
     })

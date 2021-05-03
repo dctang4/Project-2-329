@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import {Route, Switch} from "react-router-dom"
 import Home from "./pages/Home"
 import Heroes from "./pages/Heroes"
@@ -8,24 +8,37 @@ import MyAlias from "./pages/MyAlias"
 
 
 const Main = ({heroesData}) => {
+  const [heroData, setHeroData] = useState(null)
+
+  const handleClick = (data) => {
+    setHeroData(data)
+  }
+
   return (
     <div className="main">
       <Switch>
         <Route exact path="/">
           <Home/>
         </Route>
-        <Route exact path="/Heroes">
-          <Heroes heroesData={heroesData}/>
+        <Route exact path="/heroes">
+          <Heroes 
+            heroesData={heroesData}
+            handleClick={handleClick}
+          />
         </Route>
-        <Route path="/Heroes/:character"
+        <Route 
+          path="/heroes/:character"
           render={(routerProps) =>
-          <Info {...routerProps}
-          heroesData={heroesData}/>}
+            <Info 
+              {...routerProps}
+              heroData={heroData}
+            />
+          }
         />
-        <Route path="/FaveHeroes">
+        <Route path="/faveheroes">
           <FaveHeroes/>
         </Route>
-        <Route path="/MyAlias">
+        <Route path="/myalias">
           <MyAlias/>
         </Route>
       </Switch>

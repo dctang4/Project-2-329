@@ -5,7 +5,7 @@ const Header = (props) => {
   return (
     <div className="nav">
       <div className="icon-image">
-        <Link to="/Heroes">
+        <Link to="/heroes">
           <img 
             className="icon" 
             src="https://res.cloudinary.com/dvxvez8mj/image/upload/v1620061066/Project%202/icon1_edj2mm.png" 
@@ -27,13 +27,13 @@ const Header = (props) => {
         {/* <Link to="/">
           <div>Home</div>
         </Link>
-        <Link to="/Heroes">
+        <Link to="/heroes">
           <div>Heroes</div>
         </Link> */}
-        <Link to="/FaveHeroes">
+        <Link to="/faveheroes">
           <div>Fave</div>
         </Link>
-        <Link to="/MyAlias">
+        <Link to="/myalias">
           <div>Alias</div>
         </Link>
       </div>
