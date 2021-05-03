@@ -7,7 +7,7 @@ import FaveHeroes from "./pages/FaveHeroes"
 import MyAlias from "./pages/MyAlias"
 
 
-const Main = ({herosData}) => {
+const Main = ({heroesData}) => {
   return (
     <div className="main">
       <Switch>
@@ -15,12 +15,12 @@ const Main = ({herosData}) => {
           <Home/>
         </Route>
         <Route exact path="/Heroes">
-          <Heroes herosData={herosData}/>
+          <Heroes heroesData={heroesData}/>
         </Route>
         <Route path="/Heroes/:character"
           render={(routerProps) =>
           <Info {...routerProps}
-          herosData={herosData}/>}
+          heroesData={heroesData}/>}
         />
         <Route path="/FaveHeroes">
           <FaveHeroes/>

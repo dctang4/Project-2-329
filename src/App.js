@@ -18,8 +18,9 @@ function App() {
 
       tempArr.push(...data.result);
     }
-    // tempArr = tempArr.filter((char) => char.quirk !== null)
-    // tempArr = tempArr.filter((char) => char.quirk !== "Unknown Quirk")
+    tempArr = tempArr.filter((char) => char.name !== null)
+    tempArr = tempArr.filter((char) => char.quirk !== null)
+    tempArr = tempArr.filter((char) => char.quirk !== "Unknown Quirk")
 
     setHeroesData(tempArr);
   };
@@ -30,8 +31,8 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Main/>
-      <Footer heroesData={heroesData}/>
+      <Main heroesData={heroesData}/>
+      <Footer/>
     </div>
   );
 }
