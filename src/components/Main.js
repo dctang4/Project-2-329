@@ -14,7 +14,7 @@ const Main = ({herosData}) => {
         <Route exact path="/">
           <Home/>
         </Route>
-        <Route exact pat="/Heroes">
+        <Route exact path="/Heroes">
           <Heroes herosData={herosData}/>
         </Route>
         <Route path="/Heroes/:character"
@@ -22,10 +22,10 @@ const Main = ({herosData}) => {
           <Info {...routerProps}
           herosData={herosData}/>}
         />
-        <Route path="./FaveHeroes">
+        <Route path="/FaveHeroes">
           <FaveHeroes/>
         </Route>
-        <Route path="./MyAlias">
+        <Route path="/MyAlias">
           <MyAlias/>
         </Route>
       </Switch>
