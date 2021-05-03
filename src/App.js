@@ -21,6 +21,7 @@ function App() {
     tempArr = tempArr.filter((char) => char.name !== null)
     tempArr = tempArr.filter((char) => char.quirk !== null)
     tempArr = tempArr.filter((char) => char.quirk !== "Unknown Quirk")
+    tempArr = tempArr.filter((char) => char.alias !== null)
 
     setHeroesData(tempArr);
   };
