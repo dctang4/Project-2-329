@@ -6,7 +6,7 @@ const Home = (props) => {
     <img 
       className="villians-heroes"
       src="https://res.cloudinary.com/dvxvez8mj/image/upload/v1620060253/Project%202/villiansvsheroes_djtylw.jpg"
-      alt="villians and heroes"
+      alt="villains and heroes"
     />
     <div className="description">
       <p className="description-1">

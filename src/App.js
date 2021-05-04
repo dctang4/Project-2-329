@@ -7,6 +7,7 @@ import "./App.scss";
 
 function App() {
   const [heroesData, setHeroesData] = useState(null);
+  const [heroesArr, setHeroesArr] = useState(null);
 
   const getData = async () => {
     let tempArr = [];
@@ -19,20 +20,26 @@ function App() {
       tempArr.push(...data.result);
     }
     tempArr = tempArr.filter((char) => char.name !== null)
-    // tempArr = tempArr.filter((char) => char.quirk !== null)
-    // tempArr = tempArr.filter((char) => char.quirk !== "Unknown Quirk")
-    // tempArr = tempArr.filter((char) => char.alias !== null)
 
+    setHeroesArr(tempArr);
     setHeroesData(tempArr);
   };
+  // console.log("app - 1 ", heroesArr)
+  // console.log("app - 2 ", heroesData)
+  useEffect(() => {getData()}, []);
 
-  // console.log(heroesData);
-  useEffect(() => {getData();}, []);
+  const handleClick = (arr) => {
+    return setHeroesData(arr)
+  }
 
   return (
     <div className="App">
       <Header/>
-      <Main heroesData={heroesData}/>
+      <Main 
+        heroesData={heroesData} 
+        handleClick={handleClick}
+        heroesArr={heroesArr}
+      />
       <Footer/>
     </div>
   );

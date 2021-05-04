@@ -7,7 +7,7 @@ import FaveHeroes from "./pages/FaveHeroes"
 import MyAlias from "./pages/MyAlias"
 
 
-const Main = ({heroesData}) => {
+const Main = ({heroesData, handleClick, heroesArr}) => {
   return (
     <div className="main">
       <Switch>
@@ -15,7 +15,11 @@ const Main = ({heroesData}) => {
           <Home/>
         </Route>
         <Route exact path="/heroes">
-          <Heroes heroesData={heroesData}/>
+          <Heroes 
+            heroesData={heroesData}
+            handleClick={handleClick}
+            heroesArr={heroesArr}
+          />
         </Route>
         <Route 
           path="/heroes/:character"

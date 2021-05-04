@@ -24,13 +24,20 @@ const Info = (props) => {
         return heroData.alias
       }
     }
+    const image = () => {
+      if (heroData.images !== null) {
+        return heroData.images[0]
+      } else {
+        return ""
+      }
+    }
     return (
       <div className="hero-info">
         <h1 className={heroData.name}>
           {heroData.name}
         </h1>
         <img
-          src={heroData.images[0]}
+          src={image()}
         />
         <div className="character-info">
           <h4>Alias: <span>{alias()}</span></h4>
