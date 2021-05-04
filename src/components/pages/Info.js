@@ -38,6 +38,7 @@ const Info = ({match, handleAdd}) => {
         </h1>
         <img
           src={image()}
+          alt={heroData.name}
         />
         <div className="character-info">
           <h4>Alias: <span>{alias()}</span></h4>
