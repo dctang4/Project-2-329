@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 
-const Info = (props) => {
+const Info = ({match, handleAdd}) => {
   const [heroData, setHeroData] = useState(null)
 
   const getData = async () => {
     const response = await fetch(
-      `https://myheroacademiaapi.com/api/character/${props.match.params.character}`
+      `https://myheroacademiaapi.com/api/character/${match.params.character}`
     );
 
     const data = await response.json();
@@ -44,6 +44,11 @@ const Info = (props) => {
           <h4>Quirk: <span>{heroData.quirk}</span></h4>
           <h4>Occupation: <span>{heroData.occupation}</span></h4>
           <h4>Description: <span>{heroData.description}</span></h4>
+          <button
+            onClick={() => handleAdd(heroData)}
+          >
+            Add to Fave
+          </button>
         </div>
       </div>
     );

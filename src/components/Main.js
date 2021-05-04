@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import {Route, Switch} from "react-router-dom"
 import Home from "./pages/Home"
 import Heroes from "./pages/Heroes"
@@ -8,6 +8,12 @@ import MyAlias from "./pages/MyAlias"
 
 
 const Main = ({heroesData, handleClick, heroesArr}) => {
+  const [faveArr, setFaveArr] = useState([])
+
+  const handleAdd = (hero) => {
+    setFaveArr([...faveArr, hero])
+  }
+
   return (
     <div className="main">
       <Switch>
@@ -24,10 +30,13 @@ const Main = ({heroesData, handleClick, heroesArr}) => {
         <Route 
           path="/heroes/:character"
           render={(routerProps) =>
-            <Info {...routerProps}/>}
+            <Info 
+              {...routerProps}
+              handleAdd={handleAdd}
+            />}
         />
         <Route path="/faveheroes">
-          <FaveHeroes/>
+          <FaveHeroes faveArr={faveArr}/>
         </Route>
         <Route path="/myalias">
           <MyAlias/>
