@@ -14,6 +14,11 @@ const Main = ({heroesData, handleClick, heroesArr}) => {
     setFaveArr([...faveArr, hero])
   }
 
+  const handleRemove = (index) => {
+    const newFaveArr = faveArr.filter((fave, i) => i !== index)
+    setFaveArr(newFaveArr)
+  }
+
   return (
     <div className="main">
       <Switch>
@@ -36,7 +41,10 @@ const Main = ({heroesData, handleClick, heroesArr}) => {
             />}
         />
         <Route path="/faveheroes">
-          <FaveHeroes faveArr={faveArr}/>
+          <FaveHeroes 
+            faveArr={faveArr}
+            handleRemove={handleRemove}
+          />
         </Route>
         <Route path="/myalias">
           <MyAlias/>
