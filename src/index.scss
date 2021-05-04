@@ -86,9 +86,9 @@ a {
 
   .villians-heroes {
     height: 300px;
-    padding-top: 5px;
+    padding-top: 10px;
   }
-  
+
   .description {
     .description-1 {
       margin: 10px 0;
@@ -140,6 +140,28 @@ a {
       &:hover {
         background-color: $myYellow;
       }
+    }
+  }
+}
+
+///////////////////////////////////
+// Main - Heroes - Info
+///////////////////////////////////
+.hero-info {
+  height: 100%;
+  overflow: auto;
+
+  img{
+    height: 200px;
+  }
+
+  .character-info {
+    h4 {
+      margin: 5px 0;
+    }
+    span {
+      font-weight: 500;
+      font-style: italic;
     }
   }
 }
