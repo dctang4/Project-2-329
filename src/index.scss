@@ -1,5 +1,8 @@
 @import "./components/scss/config";
 
+/////////////////////////////////////////////
+// Mobile
+/////////////////////////////////////////////
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,8 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $neonDekuGreen;
-  height: 100vh;
+  background-image: url("https://res.cloudinary.com/dvxvez8mj/image/upload/v1620060250/Project%202/villiansvsheroes2_owbleo.png");
 }
 
 code {
@@ -16,8 +18,16 @@ code {
     monospace;
 }
 
+.App {
+  background-color: $neonDekuGreen;
+  height: 100vh;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 h1 {
   margin: 0;
+  padding: 10px;
 }
 
 a {
@@ -41,22 +51,19 @@ a {
       margin: 0;
     }
   }
-
   .MyHero-logo {
     img.logo {
       height: 70px;
     }
   }
-  
   .nav-links {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
+    justify-content: space-between;
     a {
-      margin: 0 2px 35px 0;
+      margin: 0 2px 0 0;
     }
   }
-
   a {
     color: $myRed;
     // text-decoration: none;
@@ -68,10 +75,7 @@ a {
 // Main
 /////////////////////////////////////////////
 .main {
-  // background-color: $neonDekuGreen;
   height: calc(100vh - 107px);
-  background-size: cover;
-  margin: 0;
 }
 
 ///////////////////////////////////
@@ -80,16 +84,16 @@ a {
 .home {
   height: 100%;
   overflow: auto;
-  .villians-heroes {
+  .villains-heroes {
     height: 300px;
     padding-top: 10px;
   }
   .description {
-    .description-1 {
+    .desc {
       margin: 10px 0;
     }
-    .description-2 {
-      display: none;
+    .desc-M {
+      font-size: 18px;
     }
   }
 }
@@ -98,9 +102,11 @@ a {
 // Main - Heroes
 ///////////////////////////////////
 .heroes {
-  h1 {
-    padding: 10px;
-  }
+  background-image: url("https://res.cloudinary.com/dvxvez8mj/image/upload/v1620061066/Project%202/icon1_edj2mm.png" );
+  background-position: center;
+  background-size: calc(100vh - 30px);
+  background-repeat: no-repeat;
+  margin: 0;
   .sort {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -114,7 +120,7 @@ a {
 }
 
 .heroes-list {
-  height: calc(100vh - 270px);
+  height: calc(100vh - 280px);
   margin-top: 10px;
   overflow: auto;
   display: flex;
@@ -131,10 +137,10 @@ a {
     }
     p {
       margin: 0 0 15px 0;
-      width: 225px;
+      width: 300px;
       font-weight: 600;
       border: 3px solid $dekuGreen;
-      border-radius: 50%;
+      border-radius: 0 40px;
       padding: 8px 0;
       background-color: white;
       &:hover {
@@ -150,6 +156,8 @@ a {
 .hero-info {
   height: 100%;
   overflow: auto;
+  max-width: 650px;
+  margin: 0 auto;
   img{
     height: 200px;
   }
@@ -171,11 +179,21 @@ a {
 // Main - FaveHeroes
 ///////////////////////////////////
 .fave-heroes {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://res.cloudinary.com/dvxvez8mj/image/upload/v1620179812/Project%202/bakugo-background_awhies.png" );
+  background-position: center;
+  background-size: calc(100vh - 30px);
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  height: calc(100vh - 180px);
   overflow-y: auto;
   .fave-hero {
     position: relative;
@@ -185,10 +203,11 @@ a {
     background-color: white;
     height: 380px;
     margin: 20px;
-    box-shadow: 0 0 5px 5px $dekuGreen;
+    box-shadow: 0 0 6px 4px $dekuGreen;
     transition: all 1s;
     &:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 8px 6px $dekuGreen;
     }
     h2 {
       margin: 10px 0;
@@ -207,12 +226,8 @@ a {
     button {
       @include buttons($neonDekuGreen,$dekuGreen,$dekuGreen);
       position: absolute;
-      left: 37%;
+      left: (250px - 73.64px)/2 ;
       bottom: 2px
-      
-      // border: 2px solid $dekuGreen;
-      // background-color: $neonDekuGreen;
-      // border-radius: 10px;
     }
   }
 }
@@ -230,5 +245,137 @@ a {
   align-items: center;
   h4 {
     margin: 0;
+  }
+}
+
+/////////////////////////////////////////////
+// Tablet 
+/////////////////////////////////////////////
+@media screen  and (min-width: 650px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  /* ------------ Header/Nav ------------ */
+  .nav {
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    .icon-image {
+      a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        img.icon {
+          height: 80px;
+        }
+        p {
+          display: none;
+          position: absolute;
+          font-size: 24px;
+          left: 95px;
+        }
+        &:hover p {
+          display: block;
+        }
+      }
+    }
+    .MyHero-logo {
+      height: 80px;
+      img.logo {
+        height: 80px
+      }
+    }
+    .nav-links {
+      flex-direction: row;
+      align-items: center;
+      a {
+        margin: 0 10px;
+        font-size: 24px;
+      }
+    }
+  }
+
+  /* ------------ Main ------------ */
+  .main {
+    height: calc(100vh - 120px);
+  }
+
+  /* ------ Heroes ------ */
+  .heroes {
+    .sort {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 1fr;
+      width: 650px;
+    }
+  }
+  .heroes-list {
+    height: calc(100vh - 251px)
+  }
+
+
+  /* ------------ Footer ------------ */
+  .footer {
+    height: 40px;
+    h4 {
+      font-size: 20px;
+    }
+  }
+}
+
+/////////////////////////////////////////////
+// Desktop 
+/////////////////////////////////////////////
+@media screen  and (min-width: 1024px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  /* ------------ Header/Nav ------------ */
+  .nav {
+    height: 100px;
+    .icon-image {
+      a {
+        img.icon {
+          height: 100px;
+        }
+        p {
+          font-size: 30px;
+          left: 120px;
+        }
+      }
+    }
+    .MyHero-logo {
+      height: 100px;
+      img.logo {
+        height: 100px
+      }
+    }
+    .nav-links {
+      flex-direction: row;
+      align-items: center;
+      a {
+        margin: 0 20px;
+        font-size: 30px;
+      }
+    }
+  }
+
+  /* ------------ Main ------------ */
+  .main {
+    height: calc(100vh - 148px);
+  }
+
+  /* ------ Heroes ------ */
+  .heroes-list {
+    height: calc(100vh - 285px)
+  }
+
+  /* ------------ Footer ------------ */
+  .footer {
+    height: 48px;
+    h4 {
+      font-size: 24px;
+    }
   }
 }

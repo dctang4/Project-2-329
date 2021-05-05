@@ -19,17 +19,12 @@ const Header = (props) => {
           <img
             className="logo"
             src="https://res.cloudinary.com/dvxvez8mj/image/upload/v1620052647/Project%202/MyHeroAcademialogo_mxqqjc.png"
+            // src="https://res.cloudinary.com/dvxvez8mj/image/upload/v1620171108/Project%202/MyHeroAcademialogo2_sgutt6.png"
             alt="logo"
           />
         </Link>
       </div>
       <div className="nav-links">
-        {/* <Link to="/">
-          <div>Home</div>
-        </Link>
-        <Link to="/heroes">
-          <div>Heroes</div>
-        </Link> */}
         <Link to="/faveheroes">
           <div>Fave</div>
         </Link>

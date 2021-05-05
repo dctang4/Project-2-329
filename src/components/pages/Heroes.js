@@ -46,37 +46,37 @@ const Heroes = ({heroesData, handleClick, heroesArr}) => {
         <h1>Heroes/Villains</h1>
         <div className="sort">
           <button
-            className="full-list"
+            className="sort-full-list"
             onClick={() => handleClick(heroesArr)}
           >
             Full List
           </button>
           <button
-            className="reverse-alph"
+            className="sort-reverse-alph"
             onClick={() => handleClick(sortRevAlph)}
           >
             Reverse
           </button>
           <button
-            className="has-quirk"
+            className="sort-has-quirk"
             onClick={() => handleClick(sortHasQuirk)}
           >
             Has Quirk
           </button>
           <button
-            className="villians"
+            className="sort-villians"
             onClick={() => handleClick(sortVillains)}
           >
             Villains
           </button>
           <button
-            className="heroes"
+            className="sort-heroes"
             onClick={() => handleClick(sortHeroes)}
           >
             Heroes
           </button>
           <button
-            className="students"
+            className="sort-students"
             onClick={() => handleClick(sortStudents)}
           >
             Students

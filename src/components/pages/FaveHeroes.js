@@ -28,7 +28,11 @@ const FaveHeroes = ({faveArr, handleRemove}) => {
     })
     return (
       <div className="fave-heroes">
-        {faveHeroes}
+        <h1>Favorite Heroes/Villains</h1>
+        <div className="card-container">
+          {faveHeroes}
+        </div>
+        
       </div>
     )
   }
