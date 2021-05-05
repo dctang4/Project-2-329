@@ -27,7 +27,7 @@ code {
 
 h1 {
   margin: 0;
-  padding: 10px;
+  padding: 10px 0 5px;
 }
 
 a {
@@ -47,9 +47,6 @@ a {
     img.icon {
       height: 50px;
     }
-    p {
-      margin: 0;
-    }
   }
   .MyHero-logo {
     img.logo {
@@ -66,8 +63,15 @@ a {
   }
   a {
     color: $myRed;
-    // text-decoration: none;
     font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    transition: all 0.25s;
+    &:hover {
+      text-shadow: 2px 2px 3px black;
+    }
+    p {
+      margin: 0;
+    }
   }
 }
 
@@ -102,7 +106,7 @@ a {
 // Main - Heroes
 ///////////////////////////////////
 .heroes {
-  background-image: url("https://res.cloudinary.com/dvxvez8mj/image/upload/v1620061066/Project%202/icon1_edj2mm.png" );
+  background-image: url("https://res.cloudinary.com/dvxvez8mj/image/upload/o_50/v1620061066/Project%202/icon1_edj2mm.png" );
   background-position: center;
   background-size: calc(100vh - 30px);
   background-repeat: no-repeat;
@@ -157,7 +161,7 @@ a {
 .hero-info {
   height: 100%;
   overflow: auto;
-  max-width: 650px;
+  max-width: 640px;
   margin: 0 auto;
   img{
     height: 200px;
@@ -182,7 +186,7 @@ a {
 .fave-heroes {
   display: flex;
   flex-direction: column;
-  background-image: url("https://res.cloudinary.com/dvxvez8mj/image/upload/v1620179812/Project%202/bakugo-background_awhies.png" );
+  background-image: url("https://res.cloudinary.com/dvxvez8mj/image/upload/o_50/v1620179812/Project%202/bakugo-background_awhies.png" );
   background-position: center;
   background-size: calc(100vh - 30px);
   background-repeat: no-repeat;
@@ -202,7 +206,7 @@ a {
     border-radius: 10px;
     width: 250px;
     background-color: white;
-    height: 380px;
+    height: 420px;
     margin: 20px;
     box-shadow: 0 0 6px 4px $dekuGreen;
     transition: all 1s;
@@ -211,7 +215,13 @@ a {
       box-shadow: 0 0 8px 6px $dekuGreen;
     }
     h2 {
-      margin: 10px 0;
+      margin: auto;
+      font-size: 22px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
     }
     img {
       height: 175px;
@@ -219,6 +229,7 @@ a {
     }
     h4{
       margin: 5px 0;
+
     }
     span {
       font-weight: 400;
@@ -267,6 +278,7 @@ a {
         position: relative;
         display: flex;
         align-items: center;
+        text-transform: uppercase;
         img.icon {
           height: 80px;
         }
@@ -275,6 +287,7 @@ a {
           position: absolute;
           font-size: 24px;
           left: 95px;
+          opacity: 0.7;
         }
         &:hover p {
           display: block;
@@ -293,7 +306,11 @@ a {
       a {
         margin: 0 10px;
         font-size: 24px;
+        text-transform: uppercase;
       }
+    }
+    a:hover {
+      text-shadow: 3px 3px 4px black;
     }
   }
 
@@ -319,12 +336,11 @@ a {
     }
   }
   .heroes-list {
-    height: calc(100vh - 251px);
+    height: calc(100vh - 250px);
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-
 
   /* ------------ Footer ------------ */
   .footer {
@@ -371,6 +387,9 @@ a {
         font-size: 30px;
       }
     }
+    a:hover {
+      text-shadow: 4px 4px 5px black;
+    }
   }
 
   /* ------------ Main ------------ */
@@ -390,12 +409,10 @@ a {
       }
     }
   }
+
   /* ------ Heroes ------ */
   .heroes-list {
-    height: calc(100vh - 285px);
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
+    height: calc(100vh - 280px);
   }
 
   /* ------------ Footer ------------ */

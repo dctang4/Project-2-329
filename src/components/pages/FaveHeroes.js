@@ -1,4 +1,5 @@
 import React from "react"
+import Media from 'react-media';
 
 const FaveHeroes = ({faveArr, handleRemove}) => {
   const loaded = () => {
@@ -28,7 +29,18 @@ const FaveHeroes = ({faveArr, handleRemove}) => {
     })
     return (
       <div className="fave-heroes">
-        <h1>Favorite Heroes/Villains</h1>
+        <Media queries={{
+          small: "(max-width: 659px)",
+          medium: "(min-width: 660px)"
+        }}>
+          {matches => (
+            <>
+              {matches.small && <h1>Favorites</h1>}
+              {matches.medium && <h1>Favorites Heroes/Villains</h1>}
+            </>
+          )}
+        </Media>
+        
         <div className="card-container">
           {faveHeroes}
         </div>

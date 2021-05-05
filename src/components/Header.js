@@ -26,13 +26,12 @@ const Header = (props) => {
       </div>
       <div className="nav-links">
         <Link to="/faveheroes">
-          <div>Fave</div>
+          <p>Fave</p>
         </Link>
         <Link to="/myalias">
-          <div>Alias</div>
+          <p>Alias</p>
         </Link>
       </div>
-
     </div>
   )
 }

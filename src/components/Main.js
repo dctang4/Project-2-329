@@ -47,7 +47,7 @@ const Main = ({heroesData, handleClick, heroesArr}) => {
           />
         </Route>
         <Route path="/myalias">
-          <MyAlias/>
+          <MyAlias heroesArr={heroesArr}/>
         </Route>
       </Switch>
     </div>

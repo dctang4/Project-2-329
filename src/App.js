@@ -6,7 +6,9 @@ import Footer from "./components/Footer"
 import "./App.scss";
 
 function App() {
+  // heroesData is the array that will altered for display
   const [heroesData, setHeroesData] = useState(null);
+  // heroesArr holds the original array as a backup
   const [heroesArr, setHeroesArr] = useState(null);
 
   const getData = async () => {
