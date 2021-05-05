@@ -28,8 +28,8 @@ const Home = (props) => {
     />
     <div className="description">
       <Media queries={{
-        small: "(max-width: 649px)",
-        medium: "(min-width: 650px)"
+        small: "(max-width: 659px)",
+        medium: "(min-width: 660px)"
       }}>
         {matches => (
           <>
