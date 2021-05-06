@@ -1,9 +1,11 @@
 import React, {useState} from "react"
 import Options from "../functions/Options"
+import aliasData from "../../aliasData"
 
 const MyAlias = ({heroesArr}) => {
+  const [myAlais, setMyAlias] = useState("")
   const [myQuirk, setMyQuirk] = useState("")
-  // const [aliasObj, setAliasObj] = useState({color: "", stat: "", side: ""})
+  const [aliasObj, setAliasObj] = useState({color: "black", stat: "strength", side: "villian"})
 
   const loaded = () => {
     const tempArr = heroesArr.filter((char) => char.quirk !== null);
@@ -13,40 +15,71 @@ const MyAlias = ({heroesArr}) => {
       quirks.push(...char.quirk.split(", "))
     }
     quirks = quirks.filter((quirk) => {
-      return (quirk.includes("[") === false && quirk.includes("Quirk") === false && quirk.includes("Unknown") === false)})
-    // console.log("quirks ", quirks)
+      return (quirk.includes("[") === false && quirk.includes("Quirk") === false && quirk.includes("Unknown") === false)
+    })
+    
+    const randNum = (arr) => {
+      return (Math.floor(Math.random()*arr.length))
+    }
     
     const handleQuirk = () => {
-      const randNum = Math.floor(Math.random()*quirks.length);
-      setMyQuirk(quirks[randNum]);
-      console.log("myQuirk", myQuirk)
+      setMyQuirk(quirks[randNum(quirks)]);
+    }
+
+    const handleChange = (event) => {
+      const name = event.target.name;
+      setAliasObj({
+        ...aliasObj,
+        [name]: event.target.value
+      })
+    }
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      const alias = () => {
+        const colorArr = aliasData.color[aliasObj.color]
+        const statArr = aliasData.stat[aliasObj.stat]
+        const sideArr = aliasData.side[aliasObj.side]
+        if (Math.random()*10 > 5) {
+          return (
+            `${colorArr[randNum(colorArr)]} ${sideArr[randNum(sideArr)]} ${statArr[randNum(statArr)]}`
+          )
+        } else {
+          return (
+            `${colorArr[randNum(colorArr)]} ${statArr[randNum(statArr)]}`
+          )
+        }
+      }
+      setMyAlias(alias())
     }
 
     const colors = ["black", "white", "red", "orange", "yellow", "green", "blue", "purple"]
-
     const stats = ["strength", "defense", "speed", "stamina"]
-
     const sides = ["villian", "hero"]
 
     return (
       <div className="my-alias-quirk">
         <h1>My Alias/Quirk</h1>
-        <form className="alias-form">
+        <form 
+          className="alias-form"
+          onSubmit={handleSubmit}
+        >
           <label>
             <h3>Pick a color: </h3>
             <select 
-              className="color"
-
+              name="color"
+              value={aliasObj.color}
+              onChange={handleChange}
             >
-              
               {Options(colors)}
             </select>
           </label>
           <label>
             <h3>Pick a stat: </h3>
             <select 
-              className="stat"
-
+              name="stat"
+              value={aliasObj.stat}
+              onChange={handleChange}
             >
               {Options(stats)}
             </select>
@@ -54,15 +87,16 @@ const MyAlias = ({heroesArr}) => {
           <label>
             <h3>Pick a side: </h3>
             <select 
-              className="side"
-
+              name="side"
+              value={aliasObj.side}
+              onChange={handleChange}
             >
               {Options(sides)}
             </select>
           </label>
           <input type="submit" value="submit"/>
         </form>
-        <h2>My Alias: <span></span></h2>
+        <h2>My Alias: <span>{myAlais}</span></h2>
         
         <button onClick={handleQuirk}>Random Quirk</button>
         <h2>My Quirk: <span>{myQuirk}</span></h2>

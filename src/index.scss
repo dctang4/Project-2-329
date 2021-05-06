@@ -260,6 +260,7 @@ a {
   background-repeat: no-repeat;
   h2 {
     margin: 0 auto 20px;
+    padding: 0 5px;
     text-align: left;
     max-width: 400px;
   }
@@ -278,6 +279,7 @@ a {
       margin: 0;
       &:hover {
         transform: scale(1);
+        border-width: 2px;
       }
     }
     input {
@@ -396,6 +398,13 @@ a {
   .my-alias-quirk {
     h2 {
       font-size: 27px;
+    }
+    .alias-form {
+      width: 600px;
+      grid-template-columns: 1fr 1fr 1fr;
+      input {
+        grid-column: 1 / 4;
+      }
     }
   }
 
