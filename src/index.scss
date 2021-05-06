@@ -118,7 +118,7 @@ a {
     width: 320px;
     margin: auto;
     button {
-      @include buttons(white,$dekuGreen,$dekuGreen)
+      @include buttons(white, $dekuGreen)
     }
   }
 }
@@ -130,6 +130,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-behavior: smooth;
   .hero {
     margin: 0 10px;
     a {
@@ -153,6 +154,11 @@ a {
       }
     }
   }
+  .back-to-top {
+    @include buttons(white, $myRed);
+    padding: 5px 20px;
+    border-radius: 40px 0;
+  }
 }
 
 ///////////////////////////////////
@@ -175,7 +181,7 @@ a {
       font-style: italic;
     }
     button {
-      @include buttons(white, $dekuGreen, $dekuGreen)
+      @include buttons(white, $dekuGreen)
     }
   }
 }
@@ -221,10 +227,9 @@ a {
       display: flex;
       align-items: center;
       justify-content: center;
-
     }
     img {
-      height: 175px;
+      height: 150px;
       max-width: 250px;
     }
     h4{
@@ -236,7 +241,7 @@ a {
       font-style: italic;
     }
     button {
-      @include buttons($neonDekuGreen,$dekuGreen,$dekuGreen);
+      @include buttons($neonDekuGreen,$dekuGreen);
       position: absolute;
       left: (250px - 73.64px)/2 ;
       bottom: 2px
@@ -244,11 +249,24 @@ a {
   }
 }
 
+///////////////////////////////////
+// Main - MyAlias
+///////////////////////////////////
+.my-alias-quirk {
+  span {
+    font-style: italic;
+    font-weight: 500;
+  }
+  button {
+    @include buttons(white, $dekuGreen)
+  }
+}
+
 /////////////////////////////////////////////
 // Footer
 /////////////////////////////////////////////
 .footer {
-  background-color: black;
+  background-color: $myRed;
   color: white;
   height: 37px;
   display: flex;
@@ -342,6 +360,13 @@ a {
     justify-content: space-around;
   }
 
+  /* ------ MyAlias ------ */
+  .my-alias-quirk {
+    h2 {
+      font-size: 27px;
+    }
+  }
+
   /* ------------ Footer ------------ */
   .footer {
     height: 40px;
@@ -414,6 +439,13 @@ a {
   .heroes-list {
     height: calc(100vh - 280px);
   }
+
+    /* ------ MyAlias ------ */
+    .my-alias-quirk {
+      h2 {
+        font-size: 30px;
+      }
+    }
 
   /* ------------ Footer ------------ */
   .footer {

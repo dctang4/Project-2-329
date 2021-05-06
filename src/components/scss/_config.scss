@@ -3,19 +3,22 @@ $myRed: #EC0013;
 $dekuGreen: #307B64;
 $neonDekuGreen: #B4EEF2;
 
-@mixin buttons($backgroundColor,$borderColor,$boxshadowColor) {
+@mixin buttons($backgroundColor, $boxshadowColor) {
   background-color: $backgroundColor;
   border-radius: 10px;
-  border: 2px solid $borderColor;
-  box-shadow: 0 0 6px 3px $boxshadowColor;
+  border: 2px solid $dekuGreen;
+  box-shadow: 0 0 2px 1px $boxshadowColor;
+  color: $dekuGreen;
+  font-weight: bold;
   margin: 10px auto;
   padding: 5px 10px;
-  transition: all 0.1s;
+  transition: all 0.2s;
   // height: 25px;
   &:hover {
     box-shadow: 0 0 10px 3px $boxshadowColor;
+    border-width: 3px;
+    color: black;
     cursor: pointer;
-    font-weight: 600;
     transform: scale(1.05);
     
   }

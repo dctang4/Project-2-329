@@ -44,6 +44,9 @@ const Info = ({match, handleAdd}) => {
           <h4>Alias: <span>{alias()}</span></h4>
           <h4>Quirk: <span>{heroData.quirk}</span></h4>
           <h4>Occupation: <span>{heroData.occupation}</span></h4>
+          <h4>Affiliation: <span>{heroData.affiliation}</span></h4>
+          <h4>Epithet: <span>{heroData.epithet}</span></h4>
+          <h4>Status: <span>{heroData.status}</span></h4>
           <h4>Description: <span>{heroData.description}</span></h4>
           <button
             onClick={() => handleAdd(heroData)}

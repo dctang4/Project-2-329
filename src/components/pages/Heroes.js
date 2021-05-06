@@ -32,7 +32,7 @@ const Heroes = ({heroesData, handleClick, heroesArr}) => {
 
     const heroes = heroesData.map((heroData,index) => {
       return (
-        <div className="hero" key={index}>
+        <div className="hero" id={index} key={index}>
           <Link to={`/heroes/${heroData.id}`}>
             <p className={heroData.id}>
               {heroData.name}
@@ -84,6 +84,7 @@ const Heroes = ({heroesData, handleClick, heroesArr}) => {
         </div>
         <div className="heroes-list">
           {heroes}
+          <a href="#0" className="back-to-top">Back to Top</a>
         </div>
       </div>
     )

@@ -1,15 +1,33 @@
-import React from "react"
+import React, {useState} from "react"
 
 const MyAlias = ({heroesArr}) => {
+  const [myQuirk, setMyQuirk] = useState("")
 
   const loaded = () => {
-    console.log("MyAlias ", heroesArr)
     const tempArr = heroesArr.filter((char) => char.quirk !== null);
-    console.log("tempArr", tempArr)
+
+    let quirks = [];
+    for (let char of tempArr) {
+      quirks.push(...char.quirk.split(", "))
+    }
+    quirks = quirks.filter((quirk) => {
+      return (quirk.includes("[") === false && quirk.includes("Quirk") === false && quirk.includes("Unknown") === false)})
+    // console.log("quirks ", quirks)
     
+    const handleQuirk = () => {
+      const randNum = Math.floor(Math.random()*quirks.length);
+      setMyQuirk(quirks[randNum]);
+      console.log("myQuirk", myQuirk)
+    }
 
-
-    return <h1>Create Alias/Quirk</h1>
+    return (
+      <div className="my-alias-quirk">
+        <h1>My Alias/Quirk</h1>
+        
+        <h2>My Quirk: <span>{myQuirk}</span></h2>
+        <button onClick={handleQuirk}>Random Quirk</button>
+      </div>
+    )
   }
 
   const loading = () => {
