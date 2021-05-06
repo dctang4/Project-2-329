@@ -10,25 +10,41 @@ const Heroes = ({heroesData, handleClick, heroesArr}) => {
         return 1
       }
     })
-    // console.log("heroes - sortRevAlph", sortRevAlph)
 
     const sortHasQuirk = heroesArr.filter((char) => char.quirk !== null)
-    // console.log("heroes - sortHasQuirk", sortHasQuirk)
 
     const filterOcc = heroesArr.filter((char) => 
       char.occupation !== null)
 
     const sortVillains = filterOcc.filter((char) => 
       char.occupation.includes("Villain"))
-    // console.log("heroes - sortVillains", sortVillains)
 
     const sortHeroes = filterOcc.filter((char) => 
       char.occupation.includes("Hero"))
-    // console.log("heroes - sortHeroes", sortHeroes)
 
     const sortStudents = filterOcc.filter((char) => 
       char.occupation.includes("Student"))
-    // console.log("heroes - sortStudents", sortStudents)
+
+    const sortArr = [
+      {class: "sort-full-list", sort: heroesArr, text: "Full List"},
+      {class: "sort-reverse", sort: sortRevAlph, text: "Reverse"},
+      {class: "sort-has-quirk", sort: sortHasQuirk, text: "Has Quirk"},
+      {class: "sort-villains", sort: sortVillains, text: "Villains"},
+      {class: "sort-heroes", sort: sortHeroes, text: "Heroes"},
+      {class: "sort-students", sort: sortStudents, text: "Students"},
+    ];
+
+    const sortBtns = sortArr.map((obj, index) => {
+      return (
+        <button
+          className={obj.class}
+          onClick={() => handleClick(obj.sort)}
+          key={index}
+        >
+          {obj.text}
+        </button>
+      )
+    })
 
     const heroes = heroesData.map((heroData,index) => {
       return (
@@ -41,46 +57,12 @@ const Heroes = ({heroesData, handleClick, heroesArr}) => {
         </div>
       )
     })
+
     return (
       <div className="heroes">
         <h1>Heroes/Villains</h1>
         <div className="sort">
-          <button
-            className="sort-full-list"
-            onClick={() => handleClick(heroesArr)}
-          >
-            Full List
-          </button>
-          <button
-            className="sort-reverse-alph"
-            onClick={() => handleClick(sortRevAlph)}
-          >
-            Reverse
-          </button>
-          <button
-            className="sort-has-quirk"
-            onClick={() => handleClick(sortHasQuirk)}
-          >
-            Has Quirk
-          </button>
-          <button
-            className="sort-villians"
-            onClick={() => handleClick(sortVillains)}
-          >
-            Villains
-          </button>
-          <button
-            className="sort-heroes"
-            onClick={() => handleClick(sortHeroes)}
-          >
-            Heroes
-          </button>
-          <button
-            className="sort-students"
-            onClick={() => handleClick(sortStudents)}
-          >
-            Students
-          </button>
+          {sortBtns}
         </div>
         <div className="heroes-list">
           {heroes}
