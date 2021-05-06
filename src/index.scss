@@ -194,7 +194,7 @@ a {
   flex-direction: column;
   background-image: url("https://res.cloudinary.com/dvxvez8mj/image/upload/o_50/v1620179812/Project%202/bakugo-background_awhies.png" );
   background-position: center;
-  background-size: calc(100vh - 30px);
+  background-size: 100vh;
   background-repeat: no-repeat;
   margin: 0;
 }
@@ -253,6 +253,11 @@ a {
 // Main - MyAlias
 ///////////////////////////////////
 .my-alias-quirk {
+  height: 100%;
+  background-image: url("https://res.cloudinary.com/dvxvez8mj/image/upload/o_50/v1620267758/Project%202/background-image_lqgabi.png");
+  background-position: center;
+  background-size: calc(100vh - 120px);
+  background-repeat: no-repeat;
   span {
     font-style: italic;
     font-weight: 500;
