@@ -1,5 +1,6 @@
 import React from "react"
 import {Link} from "react-router-dom"
+import Search from "../minor-components/Search"
 
 const Heroes = ({heroesData, handleClick, heroesArr}) => {
   const loaded = () => {
@@ -58,12 +59,25 @@ const Heroes = ({heroesData, handleClick, heroesArr}) => {
       )
     })
 
+    const handleSubmit = (input) => {
+      const search = input.toLowerCase();
+      const newHeroesArr = heroesArr.filter((hero) => {
+        return (
+          hero.name.toLowerCase().split(" ").includes(search) ||
+          hero.name.toLowerCase() === search
+          // || hero.alias.toLowerCase().includes(search) || hero.quirk.toLowerCase().includes(search)
+        )
+      })
+      handleClick(newHeroesArr)
+    }
+
     return (
       <div className="heroes">
         <h1>Heroes/Villains</h1>
         <div className="sort">
           {sortBtns}
         </div>
+        <Search handleSubmit={handleSubmit}/>
         <div className="heroes-list">
           {heroes}
           <a href="#0" className="back-to-top">Back to Top</a>

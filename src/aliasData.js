@@ -1,30 +1,30 @@
 const aliasData = {
   color: {
-    black: ["black", "dark", "shadowy", "phantom", "obscured", "charcoal", "ebony",
-      "desolate", "gloomy", "grim", "grey"],
-    white: ["white", "brilliant", "radiant", "angelic", "pale", "gentle", "wholesome",
-      "holy", "ivory", "pure"],
-    red: ["red", "crimson", "scarlet", "ruby", "vermillion", "pink", "coral", "bloody", 
-      "foxy", "fiery", "rusty", "hot"],
-    orange: ["orange", "warm", "tropical"],
-    yellow: ["yellow", "cowardly", "craven", "spineless", "gold", "golden", "sandy", ],
-    green: ["green", "rich", "thriving", "jade", "aqua", "innocent", "naive", 
-      "ignorant", "fresh", "primitive", "toxic"],
-    blue: ["blue", "azure", "cyan", "indigo", "sapphire", "cobalt", "royal", "joyless",
-      "forlorn", "cold", "cerebral"],
-    purple: ["purple", "violet", "amethyst", "lavender", "poisonous",  "venomous", "carnal"],
+    black: ["Black", "Dark", "Shadowy", "Phantom", "Obscured", "Charcoal", "Ebony",
+      "Desolate", "Gloomy", "Grim", "Grey"],
+    white: ["White", "Brilliant", "Radiant", "Angelic", "Pale", "Gentle", "Wholesome",
+      "Holy", "Ivory", "Pure"],
+    red: ["Red", "Crimson", "Scarlet", "Ruby", "Vermillion", "Pink", "Coral", "Bloody", 
+      "Foxy", "Fiery", "Rusty", "Hot"],
+    orange: ["Orange", "Warm", "Tropical", "Steamy", "Sultry", "Scorching", "Burning"],
+    yellow: ["Yellow", "Cowardly", "Craven", "Spineless", "Gold", "Golden", "Sandy", "Burning", "Blazing" ],
+    green: ["Green", "Rich", "Thriving", "Jade", "Aqua", "Innocent", "Naive", 
+      "Ignorant", "Fresh", "Primitive", "Toxic"],
+    blue: ["Blue", "Azure", "Cyan", "Indigo", "Sapphire", "Cobalt", "Royal", "Joyless",
+      "Forlorn", "Cold", "Cerebral"],
+    purple: ["Purple", "Violet", "Amethyst", "Lavender", "Poisonous",  "Venomous", "Carnal"],
   },
 
   stat: {
-    strength: ["asault", "riot", "destroyer", "raider", "decimator", "demolisher", "annihilator", "exterminator", "executioner", "obliterator"],
-    defense: ["wall", "protector", "shield", "aegis", "fortress"],
-    speed: ["speedster", "velocity", "breeze", "momentum", "energy", "impulse", "propulsion"],
-    stamina: ["zombie", "immortal", "eternal", "everlasting", "vigour"],
+    strength: ["Asault", "Riot", "Destroyer", "Raider", "Raid","Decimator", "Demolisher", "Annihilator", "Exterminator", "Executioner", "Execution", "Obliterator"],
+    defense: ["Wall", "Protector", "Shield", "Aegis", "Fortress", "Mountain", "Tank", "Guardian"],
+    speed: ["Speedster", "Velocity", "Breeze", "Momentum", "Energy", "Impulse", "Propulsion", "Rocket", "Flash"],
+    stamina: ["Zombie", "Immortal", "Eternal", "Everlasting", "Vigour", "Infinite", "Undying"],
   },
 
   side:{
-    villian: ["sinister", "evil", "eerie", "ominous", "corrupt", "malevolent", "vile", "fiendish", "nefarious", "depraved"],
-    hero: ["brave", "courageous", "valiant", "chivalrous", "feerless", "dauntless", "noble", "magnificent", "grand", "gallant"],
+    villian: ["Sinister", "Evil", "Eerie", "Ominous", "Corrupt", "Malevolent", "Vile", "Fiendish", "Nefarious", "Depraved"],
+    hero: ["Brave", "Courageous", "Valiant", "Chivalrous", "Feerless", "Dauntless", "Noble", "Magnificent", "Grand", "Gallant"],
   }
 }
 export default aliasData
