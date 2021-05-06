@@ -118,13 +118,23 @@ a {
     width: 320px;
     margin: auto;
     button {
-      @include buttons(white, $dekuGreen)
+      @include buttons(ghostwhite, $dekuGreen)
+    }
+  }
+  input {
+    @include buttons(white, white);
+    margin: 10px 12px;
+  }
+  .submit-input{
+    background-color: rgb(230, 230, 230);
+    &:hover {
+      background-color: lightgrey;
     }
   }
 }
 
 .heroes-list {
-  height: calc(100vh - 280px);
+  height: calc(100vh - 329px);
   margin-top: 10px;
   overflow: auto;
   display: flex;
@@ -155,11 +165,13 @@ a {
     }
   }
   .back-to-top {
-    @include buttons(white, $myRed);
+    @include buttons(white, white);
     padding: 5px 20px;
     border-radius: 40px 0;
   }
 }
+
+
 
 ///////////////////////////////////
 // Main - Heroes - Info
@@ -388,7 +400,7 @@ a {
     }
   }
   .heroes-list {
-    height: calc(100vh - 250px);
+    height: calc(100vh - 299px);
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -478,7 +490,7 @@ a {
 
   /* ------ Heroes ------ */
   .heroes-list {
-    height: calc(100vh - 280px);
+    height: calc(100vh - 329px);
   }
 
     /* ------ MyAlias ------ */
