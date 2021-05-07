@@ -2,6 +2,7 @@ import React from "react"
 import {Link} from "react-router-dom"
 
 const Header = (props) => {
+  // nav bar with links to different pages
   return (
     <div className="nav">
       <div className="icon-image">
@@ -19,7 +20,6 @@ const Header = (props) => {
           <img
             className="logo"
             src="https://res.cloudinary.com/dvxvez8mj/image/upload/v1620052647/Project%202/MyHeroAcademialogo_mxqqjc.png"
-            // src="https://res.cloudinary.com/dvxvez8mj/image/upload/v1620171108/Project%202/MyHeroAcademialogo2_sgutt6.png"
             alt="logo"
           />
         </Link>

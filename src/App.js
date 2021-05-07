@@ -6,13 +6,16 @@ import Footer from "./components/Footer"
 import "./App.scss";
 
 function App() {
-  // heroesData is the array that will altered for display
+  // heroesData is the array that will be altered for display
   const [heroesData, setHeroesData] = useState(null);
   // heroesArr holds the original array as a backup
   const [heroesArr, setHeroesArr] = useState(null);
 
+  // api call
   const getData = async () => {
     let tempArr = [];
+    // since the api doesn't return all characters at once a loop is needed
+    // loop over the pages of the api and add to tempArr
     for (let i = 1; i < 17; i++) {
       const response = await fetch(
         `https://myheroacademiaapi.com/api/character?page=${i}`
@@ -21,13 +24,13 @@ function App() {
 
       tempArr.push(...data.result);
     }
+    // filter out characters that doesn't have a name so blanks won't be displayed later
     tempArr = tempArr.filter((char) => char.name !== null)
 
     setHeroesArr(tempArr);
     setHeroesData(tempArr);
   };
-  // console.log("app - 1 ", heroesArr)
-  // console.log("app - 2 ", heroesData)
+
   useEffect(() => {getData()}, []);
 
   const handleClick = (arr) => {

@@ -2,6 +2,10 @@
 
 ![Alt Text](https://i.pinimg.com/originals/e6/f7/10/e6f7108412d3f772f6473cb0f7aa5474.gif)
 
+**PROJECT NAME:** My Hero Academia App
+
+**PROJECT AUTHOR:** Chun Hin D. Tang
+
 ## Project Links
 
 - [add your github repo link](https://github.com/dctang4/Project-2-329.git)
@@ -72,7 +76,7 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 - Allow user to click on character names to find out their basic known info.
 - Allow users to add and remove favorite characters
 - Allow users to create their own hero/villian alias and quirk.
-- A nav bar that with drop down menu in mobile.
+- A nav bar with liks to other pages.
 - stylize the page that best suits the color scheme of My Hero Academia.
 - Create mobile first design.
 - Have responsive design for tablet and destop.
@@ -137,6 +141,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 ## Additional Libraries
  <!-- Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc.  -->
 SASS
+react-media
 
 ## Code Snippet
 
@@ -157,3 +162,12 @@ SASS
     }
 
 ``` 
+
+## Issues and Resolutions
+
+**ISSUE**
+1. Adding a scroll up button that only scrolled up  to the top of a scrollable section gave me issues because the react scroll components offered on npmjs were all for scrolling pages and seemed more complicated than it needed to be.
+
+
+**RESOLUTION**
+1. After Kenny gave me the suggestion of using the <a> tag and using it's href to link to and id for scrolling, it reminded me of what I did on my previous project and this allowed me to easily and quickly add the scroll to top functionality to a button.

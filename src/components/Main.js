@@ -8,10 +8,27 @@ import MyAlias from "./pages/MyAlias"
 
 
 const Main = ({heroesData, handleClick, heroesArr}) => {
+
   const [faveArr, setFaveArr] = useState([])
 
+  const noRepeatFnc = (objArr, newObj) => {
+    let noRepeat = true;
+    for (let obj of objArr) {
+      if (obj.id === newObj.id) {
+        noRepeat = false;
+        return noRepeat
+      }
+    }
+    return noRepeat
+  }
+
   const handleAdd = (hero) => {
-    setFaveArr([...faveArr, hero])
+    if(faveArr === []) {
+      setFaveArr([hero])
+    } else if (noRepeatFnc(faveArr, hero)) {
+      setFaveArr([...faveArr, hero])
+    }
+    console.log(faveArr)
   }
 
   const handleRemove = (index) => {
