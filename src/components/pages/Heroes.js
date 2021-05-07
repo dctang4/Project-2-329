@@ -64,8 +64,9 @@ const Heroes = ({heroesData, handleClick, heroesArr}) => {
       const newHeroesArr = heroesArr.filter((hero) => {
         return (
           hero.name.toLowerCase().split(" ").includes(search) ||
-          hero.name.toLowerCase() === search
-          // || hero.alias.toLowerCase().includes(search) || hero.quirk.toLowerCase().includes(search)
+          hero.name.toLowerCase() === search || (
+          hero.name.toLowerCase()[0] === search && search.length === 1
+          )
         )
       })
       handleClick(newHeroesArr)

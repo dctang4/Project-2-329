@@ -108,21 +108,21 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 | Finding API | H | 2hrs| 2hrs | 2hrs |
 | Testing API | H | 3hrs| 3hrs | 3hrs |
-| Filling out README.md | M | 2.5hrs | 2.5hrs | 2.5hrs |
+| Filling out README.md | M | 2.5hrs | 3hrs | 3hrs |
 | React Architecture Diagram | M | 1hrs | 1hrs | 1hrs |
-| Time-Priority Matrix | M | 1.5hrs | hrs | hrs |
-| Wireframes | M | 2hrs | hrs | hrs |
-| Create Character List (API data) | H | 3hrs| hrs | hrs |
-| Create Character Info Cards (API data) | H | 3hrs | hrs | hrs |
-| Adding and removing Fave Heroes | H | 2.5hrs | hrs | hrs |
-| Adding Sort/Filter | M | 3hrs| hrs | hrs |
-| Adding Search | M | 2hrs| hrs | hrs |
-| Generate Hero/Villian alias and quirk | H | 3 hrs | hrs | hrs |
-| Creating the Nav | H | 2 hrs | hrs | hrs |
-| Styling Mobile First| H | 2 hrs | hrs | hrs |
-| Styling Tablet | M | 2 hrs | hrs | hrs |
-| Styling Desktop | M | 2 hrs | hrs | hrs |
-| Total | H | 36.5hrs| hrs | hrs |
+| Time-Priority Matrix | M | 1.5hrs | 1hrs | 1hrs |
+| Wireframes | M | 2hrs | 1.5hrs | 1.5hrs |
+| Create Character List (API data) | H | 3hrs| 3hrs | 3hrs |
+| Create Character Info Cards (API data) | H | 3hrs | 3hrs | 3hrs |
+| Adding and removing Fave Heroes | H | 2.5hrs | 1.5hrs | 1.5hrs |
+| Adding Sort/Filter | M | 3hrs| 2.5hrs | 2.5hrs |
+| Adding Search | M | 2hrs| 2hrs | 2hrs |
+| Generate Hero/Villian alias and quirk | H | 3 hrs | 3hrs | 3hrs |
+| Creating the Nav | H | 2 hrs | 2hrs | 2hrs |
+| Styling Mobile First| H | 2 hrs | 4hrs | 4hrs |
+| Styling Tablet | M | 2 hrs | 2.5hrs | 2.5hrs |
+| Styling Desktop | M | 2 hrs | 2hrs | 2hrs |
+| Total | H | 36.5hrs| 37hrs | 37hrs |
 
 ### PostMVP
 
@@ -143,26 +143,17 @@ SASS
  <!-- Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code.  -->
 
 ``` js
-const [heroesData, setHeroesData] = useState(null);
-
-  const getData = async () => {
-    let tempArr = [];
-    for (let i = 1; i < 17; i++) {
-      const response = await fetch(
-        `https://myheroacademiaapi.com/api/character?page=${i}`
-      );
-      const data = await response.json();
-
-      tempArr.push(...data.result);
-      
+    const handleSubmit = (input) => {
+      const search = input.toLowerCase();
+      const newHeroesArr = heroesArr.filter((hero) => {
+        return (
+          hero.name.toLowerCase().split(" ").includes(search) ||
+          hero.name.toLowerCase() === search || (
+          hero.name.toLowerCase()[0] === search && search.length === 1
+          )
+        )
+      })
+      handleClick(newHeroesArr)
     }
-    // tempArr = tempArr.filter((char) => char.quirk !== null)
-    // tempArr = tempArr.filter((char) => char.quirk !== "Unknown Quirk")
-
-    setHeroesData(tempArr);
-  };
-
-  // console.log(heroesData);
-  useEffect(() => {getData();}, []);
 
 ``` 
