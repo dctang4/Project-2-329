@@ -133,7 +133,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Create trivia data array | L | 3hrs | hrs | hrs |
-| Randomization of the questions and answers | L | 3 hrs | hrs | hrs |
+| Randomization of the questions and answers | L | 3hrs | hrs | hrs |
 | Create the trvia page | L | 3hrs | hrs | hrs |
 | Add some animation | L | 3hrs | hrs | hrs
 | Total | L | 12hrs| hrs | hrs |
