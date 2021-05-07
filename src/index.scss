@@ -216,7 +216,7 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 170px);
   overflow-y: auto;
   .fave-hero {
     position: relative;
@@ -270,6 +270,7 @@ a {
   background-position: center;
   background-size: calc(100vh - 120px);
   background-repeat: no-repeat;
+  overflow-y: auto;
   h2 {
     margin: 0 auto 20px;
     padding: 0 5px;
@@ -406,6 +407,11 @@ a {
     justify-content: space-around;
   }
 
+  /* ------ FaveHeroes------ */
+  .card-container {
+    height: calc(100vh - 188px);
+  }
+
   /* ------ MyAlias ------ */
   .my-alias-quirk {
     h2 {
@@ -493,12 +499,17 @@ a {
     height: calc(100vh - 329px);
   }
 
-    /* ------ MyAlias ------ */
-    .my-alias-quirk {
-      h2 {
-        font-size: 30px;
-      }
+  /* ------ FaveHeroes------ */
+  .card-container {
+    height: calc(100vh - 220px);
+  }
+
+  /* ------ MyAlias ------ */
+  .my-alias-quirk {
+    h2 {
+      font-size: 30px;
     }
+  }
 
   /* ------------ Footer ------------ */
   .footer {
