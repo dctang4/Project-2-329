@@ -105,7 +105,7 @@ const MyAlias = ({heroesArr}) => {
   }
 
   const loading = () => {
-    return <h1>loading...</h1>
+    return <div className="my-alias-quirk"><h1>loading...</h1></div>
   }
 
   return heroesArr ? loaded() : loading()

@@ -88,7 +88,7 @@ const Heroes = ({heroesData, handleClick, heroesArr}) => {
   }
 
   const loading = () => {
-    return <h1>loading...</h1>
+    return <div className="heroes"><h1>loading...</h1></div>
   }
 
   return heroesData ? loaded() : loading()
